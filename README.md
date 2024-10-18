@@ -1,71 +1,54 @@
-# Getting Started with Create React App
+# 🐻 Ullala의 첫 React 앱 (feat, 영화)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+빠르게 Java script와 React를 익히기 위해 시작한 이 프로젝트는 YTS API에서 영화 데이터를 가져와 표시하는 React 기반 웹 애플리케이션입니다. 
+반응형 그리드 레이아웃, 개별 영화 카드에 상세 정보 표시, 깔끔한 UI 디자인을 특징으로 합니다.
 
-## Available Scripts
+## 주요 기능
 
-In the project directory, you can run:
+- YTS API에서 영화 데이터 가져오기
+- 반응형 그리드 레이아웃으로 영화 목록 표시
+- 각 영화의 제목, 년도, 요약, 장르 등 상세 정보 표시
+- React Router를 사용한 페이지 간 네비게이션
+- 컴포넌트별 스타일링을 위한 CSS 모듈 사용
+- 앱 전체 스타일을 위한 글로벌 CSS 파일 포함
 
-### `npm start`
+## 배포 링크
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+https://gogetshitdone.github.io/React_1st_app/
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## 프로젝트 구조
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+src/
+├── components/
+│   ├── Movie.js
+│   └── Movie.module.css
+├── routes/
+│   ├── Detail.js
+│   ├── Home.js
+│   └── Home.module.css
+├── App.js
+├── global.css
+└── index.js
+```
 
-### `npm run build`
+- `components/`: 재사용 가능한 컴포넌트 포함
+- `routes/`: 페이지 컴포넌트 포함
+- `App.js`: 라우팅 설정을 담당하는 메인 컴포넌트
+- `global.css`: 전체 애플리케이션에 적용되는 글로벌 스타일
+- `index.js`: React 애플리케이션의 진입점
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 의존성
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React
+- React Router DOM
+- PropTypes
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## API
 
-### `npm run eject`
+이 프로젝트는 YTS API를 사용하여 영화 데이터를 가져옵니다. 사용된 API 엔드포인트는 다음과 같습니다:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# React_1st_app
+```
+https://yts.mx/api/v2/list_movies.json?minimum_rating=8.8&sort_by=year
+```
